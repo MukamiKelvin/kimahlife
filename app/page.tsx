@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Home() {
   const featuredProjects = [
     {
@@ -90,6 +92,8 @@ export default function Home() {
             </p>
 
             <div className="mt-10 flex flex-wrap gap-4">
+
+              {/* Scroll to Projects */}
               <a
                 href="#projects"
                 className="rounded-full bg-black px-7 py-4 text-sm font-semibold text-white transition hover:bg-gray-800"
@@ -97,12 +101,14 @@ export default function Home() {
                 View my work
               </a>
 
-              <a
-                href="#contact"
+              {/* Go to Contact Page */}
+              <Link
+                href="/contact"
                 className="rounded-full border border-gray-300 px-7 py-4 text-sm font-semibold transition hover:bg-gray-100"
               >
                 Let's talk
-              </a>
+              </Link>
+
             </div>
 
           </div>
@@ -264,12 +270,12 @@ export default function Home() {
               </p>
 
               <div className="mt-7">
-                <a
-                  href="#contact"
+                <Link
+                  href="/contact"
                   className="inline-flex rounded-full bg-black px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-gray-800"
                 >
                   Let's work together →
-                </a>
+                </Link>
               </div>
 
             </div>
@@ -278,13 +284,13 @@ export default function Home() {
 
           {/* About Page Link */}
           <div className="mt-14 border-t border-gray-200 pt-10">
-            <a
+            <Link
               href="/about"
               className="inline-flex items-center text-sm font-semibold text-black transition hover:text-gray-500"
             >
               Read more about me
               <span className="ml-2">→</span>
-            </a>
+            </Link>
           </div>
 
         </div>
@@ -317,12 +323,12 @@ export default function Home() {
 
             </div>
 
-            <a
+            <Link
               href="/projects"
               className="inline-flex whitespace-nowrap rounded-full border border-gray-300 px-6 py-3 text-sm font-semibold transition hover:bg-gray-100"
             >
               View all projects →
-            </a>
+            </Link>
 
           </div>
 
@@ -378,12 +384,12 @@ export default function Home() {
 
           {/* See More */}
           <div className="mt-12 text-center">
-            <a
+            <Link
               href="/projects"
               className="inline-flex rounded-full bg-black px-8 py-4 text-sm font-semibold text-white transition hover:bg-gray-800"
             >
               See all projects →
-            </a>
+            </Link>
           </div>
 
         </div>
@@ -417,12 +423,12 @@ export default function Home() {
 
             </div>
 
-            <a
+            <Link
               href="/services"
               className="inline-flex whitespace-nowrap rounded-full border border-gray-300 px-6 py-3 text-sm font-semibold transition hover:bg-white"
             >
               View all services →
-            </a>
+            </Link>
 
           </div>
 
@@ -454,12 +460,12 @@ export default function Home() {
 
           {/* See More */}
           <div className="mt-12 text-center">
-            <a
+            <Link
               href="/services"
               className="inline-flex rounded-full bg-black px-8 py-4 text-sm font-semibold text-white transition hover:bg-gray-800"
             >
               See all services →
-            </a>
+            </Link>
           </div>
 
         </div>
