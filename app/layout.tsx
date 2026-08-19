@@ -1,12 +1,6 @@
-import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import "./globals.css";
-
-export const metadata: Metadata = {
-  title: "Kelvin | Frontend Developer",
-  description:
-    "Kelvin is a frontend developer building modern websites and web applications.",
-};
 
 export default function RootLayout({
   children,
@@ -18,6 +12,7 @@ export default function RootLayout({
       <body>
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );

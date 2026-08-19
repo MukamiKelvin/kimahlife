@@ -26,68 +26,82 @@ export default function About() {
         </div>
       </section>
 
+
       {/* My Story */}
-<section className="border-t border-gray-200 bg-gray-50 px-8 py-20 md:py-24">
-  <div className="mx-auto grid max-w-6xl items-center gap-16 md:grid-cols-2">
+      <section className="border-t border-gray-200 bg-gray-50 px-8 py-20 md:py-24">
+        <div className="mx-auto grid max-w-6xl items-center gap-16 md:grid-cols-2">
 
-    {/* Image */}
-    <div className="overflow-hidden rounded-3xl">
-      <img
-        src="/kelvin.jpg"
-        alt="Kelvin"
-        className="h-[500px] w-full object-cover"
-      />
-    </div>
+          {/* Image */}
+          <div className="overflow-hidden rounded-3xl">
+            <img
+              src="/a.png"
+              alt="Kelvin - IT Professional and Frontend Developer"
+              className="h-[500px] w-full object-cover"
+            />
+          </div>
 
-    {/* Story */}
-    <div>
-      <p className="text-sm font-semibold uppercase tracking-[0.25em] text-gray-500">
-        My Story
-      </p>
+          {/* Story */}
+          <div>
 
-      <h2 className="mt-4 text-4xl font-bold tracking-tight md:text-5xl">
-        From IT support to building the web.
-      </h2>
+            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-gray-500">
+              My Story
+            </p>
 
-      <div className="mt-8 space-y-6 text-lg leading-8 text-gray-600">
-        <p>
-          My journey in technology started with a strong interest in
-          understanding how computers, software and digital systems
-          work. That interest eventually led me into IT, where I
-          gained hands-on experience solving technical problems in
-          real-world environments.
-        </p>
+            <h2 className="mt-4 text-4xl font-bold tracking-tight md:text-5xl">
+              From IT support to building the web.
+            </h2>
 
-        <p>
-          Working in IT has taught me that technology is not just
-          about writing code. It's about understanding problems,
-          finding practical solutions and creating systems that
-          make people's work easier.
-        </p>
+            <div className="mt-8 space-y-6 text-lg leading-8 text-gray-600">
 
-        <p>
-          As I continued growing, I became increasingly interested
-          in web development. I started building projects with
-          JavaScript and React, and eventually moved into Next.js
-          and modern frontend development.
-        </p>
+              <p>
+                I have a degree in Computer Science and a strong
+                interest in technology, software and digital
+                solutions.
+              </p>
 
-        <p>
-          Today, I'm focused on combining my IT experience with
-          software development to build useful, reliable and
-          professional digital products.
-        </p>
-      </div>
-    </div>
+              <p>
+                My journey in technology started with a curiosity
+                about how computers, software and digital systems
+                work. That curiosity eventually led me into IT,
+                where I gained hands-on experience solving technical
+                problems in real-world environments.
+              </p>
 
-  </div>
-</section>
+              <p>
+                Working in IT taught me that technology is not just
+                about writing code. It's about understanding
+                problems, finding practical solutions and creating
+                systems that make people's work easier.
+              </p>
+
+              <p>
+                As I continued growing, I became increasingly
+                interested in web development. I started building
+                projects with JavaScript and React, and eventually
+                moved into Next.js and modern frontend development.
+              </p>
+
+              <p>
+                Today, I combine my IT experience with software
+                development to build useful, reliable and
+                professional digital products for individuals and
+                businesses.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
 
       {/* What I Do */}
       <section className="px-8 py-20 md:py-24">
         <div className="mx-auto max-w-6xl">
 
           <div className="max-w-2xl">
+
             <p className="text-sm font-semibold uppercase tracking-[0.25em] text-gray-500">
               What I Do
             </p>
@@ -99,15 +113,20 @@ export default function About() {
             <p className="mt-5 text-lg leading-8 text-gray-600">
               I combine technical knowledge, problem-solving and
               frontend development to create digital solutions that
-              are useful, intuitive and easy to maintain.
+              are useful, intuitive and built around real business
+              needs.
             </p>
+
           </div>
 
+
+          {/* What I Do Cards */}
           <div className="mt-14 grid gap-6 md:grid-cols-3">
 
             {/* Frontend */}
-            <div className="rounded-2xl border border-gray-200 p-8">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-black text-xl text-white">
+            <div className="rounded-2xl border border-gray-200 p-8 transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-black text-sm font-semibold text-white">
                 01
               </div>
 
@@ -117,13 +136,17 @@ export default function About() {
 
               <p className="mt-4 leading-7 text-gray-600">
                 Building responsive and modern interfaces using
-                JavaScript, React, Next.js and Tailwind CSS.
+                JavaScript, React, Next.js and Tailwind CSS with a
+                strong focus on usability and clean design.
               </p>
+
             </div>
 
+
             {/* Business Solutions */}
-            <div className="rounded-2xl border border-gray-200 p-8">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-black text-xl text-white">
+            <div className="rounded-2xl border border-gray-200 p-8 transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-black text-sm font-semibold text-white">
                 02
               </div>
 
@@ -133,14 +156,17 @@ export default function About() {
 
               <p className="mt-4 leading-7 text-gray-600">
                 Creating practical digital systems that help
-                businesses manage information, improve processes and
-                work more efficiently.
+                businesses manage information, improve processes
+                and work more efficiently.
               </p>
+
             </div>
 
+
             {/* IT */}
-            <div className="rounded-2xl border border-gray-200 p-8">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-black text-xl text-white">
+            <div className="rounded-2xl border border-gray-200 p-8 transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-black text-sm font-semibold text-white">
                 03
               </div>
 
@@ -153,12 +179,14 @@ export default function About() {
                 technology systems to keep users and businesses
                 productive.
               </p>
+
             </div>
 
           </div>
 
         </div>
       </section>
+
 
       {/* Skills */}
       <section className="border-t border-gray-200 bg-gray-50 px-8 py-20 md:py-24">
@@ -170,18 +198,25 @@ export default function About() {
 
           <div className="mt-4 grid gap-12 md:grid-cols-2">
 
+            {/* Skills Introduction */}
             <div>
+
               <h2 className="text-4xl font-bold tracking-tight md:text-5xl">
                 My toolkit.
               </h2>
 
               <p className="mt-5 max-w-lg text-lg leading-8 text-gray-600">
                 I'm continuously expanding my toolkit as I build
-                projects and work with new technologies.
+                projects, solve problems and work with new
+                technologies.
               </p>
+
             </div>
 
+
+            {/* Skills */}
             <div className="flex flex-wrap content-start gap-3">
+
               {[
                 "HTML",
                 "CSS",
@@ -195,20 +230,108 @@ export default function About() {
                 "PHP",
                 "MySQL",
                 "REST APIs",
+                "WordPress",
+                "SEO",
               ].map((skill) => (
+
                 <span
                   key={skill}
-                  className="rounded-full border border-gray-200 bg-white px-5 py-2.5 text-sm font-medium text-gray-700"
+                  className="rounded-full border border-gray-200 bg-white px-5 py-2.5 text-sm font-medium text-gray-700 transition hover:border-black hover:text-black"
                 >
                   {skill}
                 </span>
+
               ))}
+
             </div>
 
           </div>
 
         </div>
       </section>
+
+
+      {/* How I Work */}
+      <section className="px-8 py-20 md:py-24">
+        <div className="mx-auto max-w-6xl">
+
+          <div className="max-w-2xl">
+
+            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-gray-500">
+              My Approach
+            </p>
+
+            <h2 className="mt-4 text-4xl font-bold tracking-tight md:text-5xl">
+              How I approach projects.
+            </h2>
+
+          </div>
+
+
+          <div className="mt-14 grid gap-6 md:grid-cols-3">
+
+            {/* Step 1 */}
+            <div className="border-t-2 border-black pt-6">
+
+              <p className="text-sm font-semibold text-gray-400">
+                01
+              </p>
+
+              <h3 className="mt-4 text-2xl font-bold">
+                Understand
+              </h3>
+
+              <p className="mt-4 leading-7 text-gray-600">
+                I first understand your goals, your audience and
+                the problem you're trying to solve.
+              </p>
+
+            </div>
+
+
+            {/* Step 2 */}
+            <div className="border-t-2 border-black pt-6">
+
+              <p className="text-sm font-semibold text-gray-400">
+                02
+              </p>
+
+              <h3 className="mt-4 text-2xl font-bold">
+                Build
+              </h3>
+
+              <p className="mt-4 leading-7 text-gray-600">
+                I turn the idea into a practical digital solution
+                with a focus on functionality, performance and
+                user experience.
+              </p>
+
+            </div>
+
+
+            {/* Step 3 */}
+            <div className="border-t-2 border-black pt-6">
+
+              <p className="text-sm font-semibold text-gray-400">
+                03
+              </p>
+
+              <h3 className="mt-4 text-2xl font-bold">
+                Improve
+              </h3>
+
+              <p className="mt-4 leading-7 text-gray-600">
+                After launch, I can continue improving and
+                maintaining the solution as your needs evolve.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
 
       {/* CTA */}
       <section className="px-8 py-20 md:py-24">

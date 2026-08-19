@@ -117,7 +117,7 @@ export default function Home() {
           <div className="flex justify-center md:justify-end">
             <div className="overflow-hidden rounded-3xl">
               <img
-                src="/kim.png"
+                src="/kim.jpg"
                 alt="Kelvin - Frontend Developer"
                 className="h-[420px] w-full max-w-[420px] object-cover md:h-[500px] md:w-[420px]"
               />
