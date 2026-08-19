@@ -23,6 +23,45 @@ export default function Home() {
     },
   ];
 
+  const services = [
+    {
+      number: "01",
+      title: "Website Development",
+      description:
+        "Modern, responsive websites built around your business goals.",
+    },
+    {
+      number: "02",
+      title: "WordPress Websites",
+      description:
+        "Professional WordPress websites that are easy to manage and maintain.",
+    },
+    {
+      number: "03",
+      title: "E-commerce Websites",
+      description:
+        "Online stores designed to provide customers with a simple and engaging shopping experience.",
+    },
+    {
+      number: "04",
+      title: "Software Development",
+      description:
+        "Custom business systems, dashboards and web applications built around your workflow.",
+    },
+    {
+      number: "05",
+      title: "SEO",
+      description:
+        "Improve your website's visibility and help potential customers find you online.",
+    },
+    {
+      number: "06",
+      title: "Website Maintenance",
+      description:
+        "Updates, troubleshooting and technical support to keep your website running smoothly.",
+    },
+  ];
+
   return (
     <main className="min-h-screen bg-white text-black">
 
@@ -344,6 +383,82 @@ export default function Home() {
               className="inline-flex rounded-full bg-black px-8 py-4 text-sm font-semibold text-white transition hover:bg-gray-800"
             >
               See all projects →
+            </a>
+          </div>
+
+        </div>
+      </section>
+
+      {/* Services */}
+      <section
+        id="services"
+        className="border-t border-gray-200 bg-gray-50 px-8 py-20 md:py-24"
+      >
+        <div className="mx-auto max-w-6xl">
+
+          {/* Section Heading */}
+          <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+
+            <div className="max-w-2xl">
+
+              <p className="mb-5 text-sm font-semibold uppercase tracking-[0.25em] text-gray-500">
+                What I Do
+              </p>
+
+              <h2 className="text-4xl font-bold tracking-tight md:text-5xl">
+                Digital solutions for your business.
+              </h2>
+
+              <p className="mt-5 text-lg leading-8 text-gray-600">
+                From websites and online stores to custom software and
+                SEO, I help businesses build and improve their digital
+                presence.
+              </p>
+
+            </div>
+
+            <a
+              href="/services"
+              className="inline-flex whitespace-nowrap rounded-full border border-gray-300 px-6 py-3 text-sm font-semibold transition hover:bg-white"
+            >
+              View all services →
+            </a>
+
+          </div>
+
+          {/* Service Cards */}
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+
+            {services.map((service) => (
+              <article
+                key={service.number}
+                className="rounded-3xl border border-gray-200 bg-white p-7 transition duration-300 hover:-translate-y-1 hover:shadow-lg"
+              >
+
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-black text-sm font-semibold text-white">
+                  {service.number}
+                </div>
+
+                <h3 className="mt-7 text-xl font-bold tracking-tight">
+                  {service.title}
+                </h3>
+
+                <p className="mt-4 leading-7 text-gray-600">
+                  {service.description}
+                </p>
+
+              </article>
+            ))}
+
+          </div>
+
+          {/* See More */}
+          <div className="mt-12 text-center">
+            <a
+              href="/services"
+              className="inline-flex rounded-full bg-black px-8 py-4 text-sm font-semibold text-white transition hover:bg-gray-800"
+            >
+              See all services →
             </a>
           </div>
 
