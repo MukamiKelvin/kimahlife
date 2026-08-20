@@ -1,3 +1,9 @@
+"use client";
+
+import Link from "next/link";
+import { motion } from "motion/react";
+import Reveal from "@/components/Reveal";
+
 export default function Services() {
   const services = [
     {
@@ -113,136 +119,213 @@ export default function Services() {
   ];
 
   return (
-    <main className="min-h-screen bg-white text-black">
+    <main className="min-h-screen bg-white text-black transition-colors duration-300 dark:bg-black dark:text-white">
 
-      {/* Services Hero */}
-      <section className="px-8 py-20 md:py-28">
+      {/* =====================================================
+          SERVICES HERO
+      ===================================================== */}
+
+      <section className="px-6 py-20 sm:px-8 md:py-28">
         <div className="mx-auto max-w-6xl">
 
-          <p className="mb-5 text-sm font-semibold uppercase tracking-[0.25em] text-gray-500">
-            What I Do
-          </p>
+          <Reveal>
+            <div>
 
-          <h1 className="max-w-4xl text-5xl font-bold leading-tight tracking-tight md:text-7xl">
-            Digital solutions
-            <span className="block text-gray-400">
-              built for your business.
-            </span>
-          </h1>
+              <motion.p
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="mb-5 text-sm font-semibold uppercase tracking-[0.25em] text-gray-500 dark:text-gray-400"
+              >
+                What I Do
+              </motion.p>
 
-          <p className="mt-8 max-w-2xl text-lg leading-8 text-gray-600">
-            From professional websites and online stores to custom
-            software and SEO, I help businesses build and improve
-            their digital presence.
-          </p>
+              <motion.h1
+                initial={{ opacity: 0, y: 25 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.7,
+                  delay: 0.1,
+                  ease: "easeOut",
+                }}
+                className="max-w-4xl text-5xl font-bold leading-tight tracking-tight md:text-7xl"
+              >
+                Digital solutions
+                <span className="block text-gray-400 dark:text-gray-500">
+                  built for your business.
+                </span>
+              </motion.h1>
 
-          {/* Hero CTA */}
-          <div className="mt-10">
-            <a
-              href="/contact"
-              className="inline-flex rounded-full bg-black px-7 py-4 text-sm font-semibold text-white transition hover:bg-gray-800"
-            >
-              Start a project →
-            </a>
-          </div>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.6,
+                  delay: 0.25,
+                }}
+                className="mt-8 max-w-2xl text-lg leading-8 text-gray-600 dark:text-gray-400"
+              >
+                From professional websites and online stores to custom
+                software and SEO, I help businesses build and improve
+                their digital presence.
+              </motion.p>
+
+              {/* Hero CTA */}
+              <motion.div
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.6,
+                  delay: 0.4,
+                }}
+                whileHover={{ y: -3 }}
+                whileTap={{ scale: 0.97 }}
+                className="mt-10 inline-block"
+              >
+                <Link
+                  href="/contact"
+                  className="inline-flex rounded-full bg-black px-7 py-4 text-sm font-semibold text-white transition hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200"
+                >
+                  Start a project →
+                </Link>
+              </motion.div>
+
+            </div>
+          </Reveal>
 
         </div>
       </section>
 
 
-      {/* Services */}
-      <section className="border-t border-gray-200 bg-gray-50 px-8 py-20 md:py-24">
+      {/* =====================================================
+          SERVICES
+      ===================================================== */}
+
+      <section className="border-t border-gray-200 bg-gray-50 px-6 py-20 transition-colors duration-300 dark:border-gray-800 dark:bg-gray-950 sm:px-8 md:py-24">
         <div className="mx-auto max-w-6xl">
 
           <div className="grid gap-6 md:grid-cols-2">
 
-            {services.map((service) => (
-              <article
+            {services.map((service, index) => (
+
+              <Reveal
                 key={service.number}
-                className="group rounded-3xl border border-gray-200 bg-white p-8 transition duration-300 hover:-translate-y-1 hover:shadow-xl md:p-10"
+                delay={index * 0.08}
               >
 
-                {/* Number + Label */}
-                <div className="flex items-start justify-between">
+                <motion.article
+                  whileHover={{ y: -7 }}
+                  transition={{ duration: 0.25 }}
+                  className="group h-full rounded-3xl border border-gray-200 bg-white p-8 shadow-sm transition-colors duration-300 dark:border-gray-800 dark:bg-gray-900 md:p-10"
+                >
 
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-black text-sm font-semibold text-white">
-                    {service.number}
+                  {/* Number + Label */}
+
+                  <div className="flex items-start justify-between">
+
+                    <motion.div
+                      whileHover={{ scale: 1.08, rotate: 3 }}
+                      className="flex h-12 w-12 items-center justify-center rounded-xl bg-black text-sm font-semibold text-white dark:bg-white dark:text-black"
+                    >
+                      {service.number}
+                    </motion.div>
+
+                    <span className="text-sm font-medium uppercase tracking-[0.15em] text-gray-400 dark:text-gray-500">
+                      Service
+                    </span>
+
                   </div>
 
-                  <span className="text-sm font-medium uppercase tracking-[0.15em] text-gray-400">
-                    Service
-                  </span>
 
-                </div>
+                  {/* Title */}
 
-
-                {/* Title */}
-                <h2 className="mt-8 text-2xl font-bold tracking-tight md:text-3xl">
-                  {service.title}
-                </h2>
+                  <h2 className="mt-8 text-2xl font-bold tracking-tight md:text-3xl">
+                    {service.title}
+                  </h2>
 
 
-                {/* Description */}
-                <p className="mt-4 max-w-xl leading-7 text-gray-600">
-                  {service.description}
-                </p>
+                  {/* Description */}
 
-
-                {/* Benefits */}
-                <div className="mt-7">
-
-                  <p className="text-sm font-semibold uppercase tracking-[0.15em] text-gray-400">
-                    What you get
+                  <p className="mt-4 max-w-xl leading-7 text-gray-600 dark:text-gray-400">
+                    {service.description}
                   </p>
 
-                  <ul className="mt-4 space-y-3">
 
-                    {service.benefits.map((benefit) => (
-                      <li
-                        key={benefit}
-                        className="flex items-start gap-3 text-sm leading-6 text-gray-600"
+                  {/* Benefits */}
+
+                  <div className="mt-7">
+
+                    <p className="text-sm font-semibold uppercase tracking-[0.15em] text-gray-400 dark:text-gray-500">
+                      What you get
+                    </p>
+
+                    <ul className="mt-4 space-y-3">
+
+                      {service.benefits.map((benefit, benefitIndex) => (
+
+                        <motion.li
+                          key={benefit}
+                          initial={{ opacity: 0, x: -10 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          viewport={{ once: true }}
+                          transition={{
+                            duration: 0.35,
+                            delay: benefitIndex * 0.05,
+                          }}
+                          className="flex items-start gap-3 text-sm leading-6 text-gray-600 dark:text-gray-400"
+                        >
+
+                          <span className="mt-0.5 font-semibold text-black dark:text-white">
+                            ✓
+                          </span>
+
+                          <span>{benefit}</span>
+
+                        </motion.li>
+
+                      ))}
+
+                    </ul>
+
+                  </div>
+
+
+                  {/* Technologies */}
+
+                  <div className="mt-8 flex flex-wrap gap-2">
+
+                    {service.technologies.map((technology) => (
+
+                      <motion.span
+                        key={technology}
+                        whileHover={{ y: -2 }}
+                        className="rounded-full border border-gray-200 bg-gray-50 px-3 py-1.5 text-xs font-medium text-gray-600 transition-colors duration-300 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-300"
                       >
-                        <span className="mt-0.5 font-semibold text-black">
-                          ✓
-                        </span>
+                        {technology}
+                      </motion.span>
 
-                        <span>{benefit}</span>
-                      </li>
                     ))}
 
-                  </ul>
-
-                </div>
+                  </div>
 
 
-                {/* Technologies */}
-                <div className="mt-8 flex flex-wrap gap-2">
+                  {/* Service CTA */}
 
-                  {service.technologies.map((technology) => (
-                    <span
-                      key={technology}
-                      className="rounded-full border border-gray-200 bg-gray-50 px-3 py-1.5 text-xs font-medium text-gray-600"
+                  <div className="mt-8 border-t border-gray-100 pt-6 transition-colors duration-300 dark:border-gray-800">
+
+                    <Link
+                      href="/contact"
+                      className="inline-flex text-sm font-semibold text-black transition hover:text-gray-500 dark:text-white dark:hover:text-gray-400"
                     >
-                      {technology}
-                    </span>
-                  ))}
+                      Discuss this service →
+                    </Link>
 
-                </div>
+                  </div>
 
+                </motion.article>
 
-                {/* Service CTA */}
-                <div className="mt-8 border-t border-gray-100 pt-6">
+              </Reveal>
 
-                  <a
-                    href="/contact"
-                    className="inline-flex text-sm font-semibold transition group-hover:text-gray-500"
-                  >
-                    Discuss this service →
-                  </a>
-
-                </div>
-
-              </article>
             ))}
 
           </div>
@@ -251,50 +334,67 @@ export default function Services() {
       </section>
 
 
-      {/* Process */}
-      <section className="px-8 py-20 md:py-24">
+      {/* =====================================================
+          PROCESS
+      ===================================================== */}
+
+      <section className="px-6 py-20 sm:px-8 md:py-24">
         <div className="mx-auto max-w-6xl">
 
-          <div className="max-w-2xl">
+          <Reveal>
 
-            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-gray-500">
-              My Process
-            </p>
+            <div className="max-w-2xl">
 
-            <h2 className="mt-4 text-4xl font-bold tracking-tight md:text-5xl">
-              From idea to launch.
-            </h2>
+              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-gray-500 dark:text-gray-400">
+                My Process
+              </p>
 
-            <p className="mt-5 text-lg leading-8 text-gray-600">
-              A simple and transparent process designed to keep your
-              project focused from the first conversation to launch.
-            </p>
+              <h2 className="mt-4 text-4xl font-bold tracking-tight md:text-5xl">
+                From idea to launch.
+              </h2>
 
-          </div>
+              <p className="mt-5 text-lg leading-8 text-gray-600 dark:text-gray-400">
+                A simple and transparent process designed to keep your
+                project focused from the first conversation to launch.
+              </p>
+
+            </div>
+
+          </Reveal>
 
 
           {/* Process Steps */}
+
           <div className="mt-14 grid gap-8 md:grid-cols-4">
 
-            {process.map((step) => (
-              <div
+            {process.map((step, index) => (
+
+              <Reveal
                 key={step.number}
-                className="border-t-2 border-black pt-6"
+                delay={index * 0.1}
               >
 
-                <p className="text-sm font-semibold text-gray-400">
-                  {step.number}
-                </p>
+                <motion.div
+                  whileHover={{ y: -5 }}
+                  className="border-t-2 border-black pt-6 transition-colors duration-300 dark:border-white"
+                >
 
-                <h3 className="mt-4 text-xl font-bold">
-                  {step.title}
-                </h3>
+                  <p className="text-sm font-semibold text-gray-400 dark:text-gray-500">
+                    {step.number}
+                  </p>
 
-                <p className="mt-3 leading-7 text-gray-600">
-                  {step.description}
-                </p>
+                  <h3 className="mt-4 text-xl font-bold">
+                    {step.title}
+                  </h3>
 
-              </div>
+                  <p className="mt-3 leading-7 text-gray-600 dark:text-gray-400">
+                    {step.description}
+                  </p>
+
+                </motion.div>
+
+              </Reveal>
+
             ))}
 
           </div>
@@ -303,63 +403,97 @@ export default function Services() {
       </section>
 
 
-      {/* Why Work With Me */}
-      <section className="border-t border-gray-200 bg-gray-50 px-8 py-20 md:py-24">
+      {/* =====================================================
+          WHY WORK WITH ME
+      ===================================================== */}
+
+      <section className="border-t border-gray-200 bg-gray-50 px-6 py-20 transition-colors duration-300 dark:border-gray-800 dark:bg-gray-950 sm:px-8 md:py-24">
         <div className="mx-auto max-w-6xl">
 
           <div className="grid gap-12 md:grid-cols-2">
 
-            <div>
+            <Reveal>
 
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-gray-500">
-                Why Work With Me
-              </p>
+              <div>
 
-              <h2 className="mt-4 text-4xl font-bold tracking-tight md:text-5xl">
-                More than just building websites.
-              </h2>
+                <p className="text-sm font-semibold uppercase tracking-[0.25em] text-gray-500 dark:text-gray-400">
+                  Why Work With Me
+                </p>
 
-            </div>
+                <h2 className="mt-4 text-4xl font-bold tracking-tight md:text-5xl">
+                  More than just building websites.
+                </h2>
+
+              </div>
+
+            </Reveal>
 
 
             <div className="space-y-8">
 
-              <div>
-                <h3 className="text-xl font-bold">
-                  Business-focused thinking
-                </h3>
+              <Reveal delay={0.1}>
 
-                <p className="mt-3 leading-7 text-gray-600">
-                  I focus on understanding what your business actually
-                  needs instead of simply building technology for the
-                  sake of it.
-                </p>
-              </div>
+                <motion.div
+                  whileHover={{ x: 5 }}
+                  transition={{ duration: 0.2 }}
+                >
 
+                  <h3 className="text-xl font-bold">
+                    Business-focused thinking
+                  </h3>
 
-              <div>
-                <h3 className="text-xl font-bold">
-                  Practical solutions
-                </h3>
+                  <p className="mt-3 leading-7 text-gray-600 dark:text-gray-400">
+                    I focus on understanding what your business actually
+                    needs instead of simply building technology for the
+                    sake of it.
+                  </p>
 
-                <p className="mt-3 leading-7 text-gray-600">
-                  My goal is to create solutions that are useful,
-                  maintainable and capable of solving real problems.
-                </p>
-              </div>
+                </motion.div>
+
+              </Reveal>
 
 
-              <div>
-                <h3 className="text-xl font-bold">
-                  Long-term support
-                </h3>
+              <Reveal delay={0.2}>
 
-                <p className="mt-3 leading-7 text-gray-600">
-                  A project doesn't have to end when it launches.
-                  I can continue helping with maintenance,
-                  improvements and technical support.
-                </p>
-              </div>
+                <motion.div
+                  whileHover={{ x: 5 }}
+                  transition={{ duration: 0.2 }}
+                >
+
+                  <h3 className="text-xl font-bold">
+                    Practical solutions
+                  </h3>
+
+                  <p className="mt-3 leading-7 text-gray-600 dark:text-gray-400">
+                    My goal is to create solutions that are useful,
+                    maintainable and capable of solving real problems.
+                  </p>
+
+                </motion.div>
+
+              </Reveal>
+
+
+              <Reveal delay={0.3}>
+
+                <motion.div
+                  whileHover={{ x: 5 }}
+                  transition={{ duration: 0.2 }}
+                >
+
+                  <h3 className="text-xl font-bold">
+                    Long-term support
+                  </h3>
+
+                  <p className="mt-3 leading-7 text-gray-600 dark:text-gray-400">
+                    A project doesn't have to end when it launches.
+                    I can continue helping with maintenance,
+                    improvements and technical support.
+                  </p>
+
+                </motion.div>
+
+              </Reveal>
 
             </div>
 
@@ -369,34 +503,53 @@ export default function Services() {
       </section>
 
 
-      {/* CTA */}
-      <section className="px-8 py-20 md:py-24">
+      {/* =====================================================
+          CTA
+      ===================================================== */}
+
+      <section className="px-6 py-20 sm:px-8 md:py-24">
         <div className="mx-auto max-w-6xl">
 
-          <div className="rounded-3xl bg-black px-8 py-16 text-center md:px-16">
+          <Reveal>
 
-            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-gray-400">
-              Have a project in mind?
-            </p>
-
-            <h2 className="mx-auto mt-5 max-w-3xl text-4xl font-bold tracking-tight text-white md:text-5xl">
-              Let's build something meaningful.
-            </h2>
-
-            <p className="mx-auto mt-5 max-w-xl text-lg leading-8 text-gray-400">
-              Tell me about your idea, your business and what you're
-              trying to achieve. Let's figure out the best digital
-              solution together.
-            </p>
-
-            <a
-              href="/contact"
-              className="mt-8 inline-flex rounded-full bg-white px-8 py-4 text-sm font-semibold text-black transition hover:bg-gray-200"
+            <motion.div
+              whileHover={{ scale: 1.005 }}
+              transition={{ duration: 0.3 }}
+              className="rounded-3xl border border-gray-200 bg-white px-8 py-16 text-center shadow-sm transition-colors duration-300 dark:border-gray-800 dark:bg-gray-900 md:px-16"
             >
-              Let's work together →
-            </a>
 
-          </div>
+              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-gray-500 dark:text-gray-400">
+                Have a project in mind?
+              </p>
+
+              <h2 className="mx-auto mt-5 max-w-3xl text-4xl font-bold tracking-tight md:text-5xl">
+                Let's build something meaningful.
+              </h2>
+
+              <p className="mx-auto mt-5 max-w-xl text-lg leading-8 text-gray-600 dark:text-gray-400">
+                Tell me about your idea, your business and what you're
+                trying to achieve. Let's figure out the best digital
+                solution together.
+              </p>
+
+              <motion.div
+                whileHover={{ y: -4 }}
+                whileTap={{ scale: 0.97 }}
+                className="mt-8 inline-block"
+              >
+
+                <Link
+                  href="/contact"
+                  className="inline-flex rounded-full bg-black px-8 py-4 text-sm font-semibold text-white transition hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200"
+                >
+                  Let's work together →
+                </Link>
+
+              </motion.div>
+
+            </motion.div>
+
+          </Reveal>
 
         </div>
       </section>

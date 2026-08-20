@@ -1,13 +1,28 @@
 @import "tailwindcss";
 
-/* ---------------------------------
-   Global Theme
----------------------------------- */
+/* =========================================
+   DARK MODE
+========================================= */
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* =========================================
+   GLOBAL THEME
+========================================= */
 
 :root {
   --background: #ffffff;
   --foreground: #111111;
 }
+
+.dark {
+  --background: #000000;
+  --foreground: #ffffff;
+}
+
+/* =========================================
+   THEME TOKENS
+========================================= */
 
 @theme inline {
   --color-background: var(--background);
@@ -16,43 +31,55 @@
   --font-mono: var(--font-geist-mono);
 }
 
-/* ---------------------------------
-   Base Styles
----------------------------------- */
+/* =========================================
+   BASE STYLES
+========================================= */
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   margin: 0;
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: hidden;
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
-/* ---------------------------------
-   Links
----------------------------------- */
+/* =========================================
+   LINKS
+========================================= */
 
 a {
   text-decoration: none;
 }
 
-/* ---------------------------------
-   Selection
----------------------------------- */
+/* =========================================
+   SELECTION
+========================================= */
 
 ::selection {
   background: #111111;
   color: #ffffff;
 }
 
-/* ---------------------------------
-   Form Elements
----------------------------------- */
+.dark ::selection {
+  background: #ffffff;
+  color: #000000;
+}
+
+/* =========================================
+   FORM ELEMENTS
+========================================= */
 
 button,
 input,
@@ -61,24 +88,35 @@ select {
   font: inherit;
 }
 
-/* ---------------------------------
-   Accessibility
----------------------------------- */
+/* =========================================
+   ACCESSIBILITY
+========================================= */
 
 button:focus-visible,
 a:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
 select:focus-visible {
-  outline: 2px solid #111111;
+  outline: 2px solid currentColor;
   outline-offset: 3px;
 }
 
-/* ---------------------------------
-   Smooth Image Rendering
----------------------------------- */
+/* =========================================
+   IMAGES
+========================================= */
 
 img {
+  display: block;
   max-width: 100%;
   height: auto;
+}
+
+/* =========================================
+   RESPONSIVE SAFETY
+========================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
