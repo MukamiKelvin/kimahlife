@@ -9,13 +9,15 @@ export default function Contact() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = async (
+    event: React.FormEvent<HTMLFormElement>
+  ) => {
     event.preventDefault();
 
     setLoading(true);
     setError("");
 
-    const form = event.target;
+    const form = event.currentTarget;
     const formData = new FormData(form);
 
     const data = {
@@ -45,13 +47,19 @@ export default function Contact() {
 
       setSubmitted(true);
       form.reset();
-    } catch (err) {
+    } catch (err: unknown) {
       console.error(err);
 
-      setError(
-        err.message ||
+      if (err instanceof Error) {
+        setError(
+          err.message ||
+            "Unable to send your message. Please try again."
+        );
+      } else {
+        setError(
           "Unable to send your message. Please try again."
-      );
+        );
+      }
     } finally {
       setLoading(false);
     }
