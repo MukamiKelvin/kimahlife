@@ -70,19 +70,19 @@ export default function Home() {
 
   const aboutCards = [
     {
-      icon: "💻",
+      icon: "1",
       title: "Frontend Development",
       description:
         "I create responsive and modern interfaces using JavaScript, React, Next.js and Tailwind CSS, with a strong focus on clean design and user experience.",
     },
     {
-      icon: "🛠️",
+      icon: "2",
       title: "IT & Technical Support",
       description:
         "My IT experience has taught me how to troubleshoot hardware, software, networking and business technology problems in real-world environments.",
     },
     {
-      icon: "🚀",
+      icon: "3",
       title: "Always Building",
       description:
         "I learn by building. Every project gives me an opportunity to improve my skills, experiment with new technologies and create better solutions.",
